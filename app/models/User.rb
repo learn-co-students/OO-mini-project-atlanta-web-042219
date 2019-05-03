@@ -52,7 +52,7 @@ class User
 		# top3.delete(nil)
 		# RecipeCard.all.delete(empty)
 		# top3.uniq
-		top = self.recipe_cards.sort_by {|rc| rc.rating}.reverse.first(3)
+		self.recipe_cards.sort_by {|rc| rc.rating}.reverse.first(3).map{|rc| rc.recipe}
 	end
 
 	#returns a hash that contains all recipes
